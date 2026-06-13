@@ -1,0 +1,55 @@
+import java.util.*;
+/*
+    iRow = 4
+    iCol = 4
+
+    *       *       *       *
+    $       $       $       $
+    *       *       *       *
+    $       $       $       $
+
+
+*/
+class program195
+{
+    public static void dispaly(int iRow,int iCol)
+    {
+       int i = 0,j = 0;
+
+       for(i = 1 ; i<= iRow ; i++)
+       {
+            
+                for(j = 1 ; j <= iCol ; j++)
+                {
+                    if(i % 2 == 1)
+                    {
+                        System.out.print("*\t");
+                    }
+                    else
+                    {
+                        System.out.print("$\t");
+                    }
+                    
+                }
+           
+            System.out.println();
+       }
+        
+    }
+
+    public static void main(String[] args) 
+    {
+        Scanner sobj = new Scanner(System.in);
+        int iValue1 = 0;
+        int iValue2 = 0;
+
+        System.out.println("Enter Number Of rows : ");
+        iValue1 = sobj.nextInt();
+
+        System.out.println("Enter Number Of Columns : ");
+        iValue2 = sobj.nextInt();
+
+        dispaly(iValue1,iValue2);
+
+    }
+}
