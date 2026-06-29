@@ -1,19 +1,45 @@
 import java.util.*;
 
-// Input  : 7 
+// Input  : 11
 // Output : *   *   *   #   #   #   *   *   *   #   #   
 
 class program188
 {
     public static void dispaly(int iNo)
     {
-       int icnt = 0;
 
-       for(icnt = 1 ; icnt <= iNo ; icnt++)
-       {
-
-       }
+        int icnt = 0;
         
+        while (icnt != iNo) 
+        {
+            for(int i = 1 ; i <= 3 ; i++){
+                System.out.print("*\t");
+                icnt++;
+                if(icnt >= iNo)
+                {
+                    
+                    break;
+                }
+            }
+
+            if(icnt >= iNo)
+                {
+                    
+                    break;
+                }
+
+            
+            for(int i = 1 ; i <= 3 ; i++){
+                System.out.print("#\t");
+                icnt++;
+                if(icnt >= iNo)
+                {
+                    System.out.println("Break");
+                    break;
+                }
+            }
+        }
+            
     }
 
     public static void main(String[] args) 
