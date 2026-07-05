@@ -5,16 +5,13 @@ int main()
 {
     int iNo = 0 , iCount = 0 , iDigit = 0;
 
-    printf("Enter Number : ");
+    printf("Enter Number : \n");
     scanf("%d",&iNo);
 
     while (iNo != 0)
     {
         iDigit = iNo %2 ;
-        if (iDigit == 1)
-        {
-            iCount++;
-        }
+        iCount = iCount + iDigit;
         iNo = iNo /2 ;
     }
 
