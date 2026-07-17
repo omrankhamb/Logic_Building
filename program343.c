@@ -3,6 +3,7 @@
 typedef unsigned int UINT;
 
 // position 3 & 7
+// toggle bit 3 and 7
 int main()
 {
     UINT iMask = 0x00000044;

@@ -6,7 +6,7 @@ typedef unsigned int UINT;
 
 UINT OffBit(UINT iNo,UINT iPos)
 {
-    UINT iMask = 0xFFFFFFF7;
+    UINT iMask = 0x01;
     UINT iResult = 0;
 
     if(iPos < 1 || iPos > 32)
@@ -16,7 +16,7 @@ UINT OffBit(UINT iNo,UINT iPos)
     }
     iMask = iMask << (iPos - 1);
 
-    iResult = iNo ^ iMask;
+    iResult = iNo ^ ~iMask;
 
     return iResult;
 }
@@ -25,7 +25,7 @@ int main()
     UINT iValue = 0, iRet = 0 , iLocation = 0;
 
     printf("Enter Number : ");
-    scanf("%d",&iLocation);
+    scanf("%d",&iValue);
 
     printf("Enter The bit position : \n");
     scanf("%d",&iLocation);

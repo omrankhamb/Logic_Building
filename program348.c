@@ -14,7 +14,7 @@ int main()
     printf("ENter Number : \n");
 
     scanf("%d",&iNo);
-    iMask - iMask1 | iMask2;
+    iMask = iMask1 | iMask2;
 
     iResult = iNo ^ iMask;
 
