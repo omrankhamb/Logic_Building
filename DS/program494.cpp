@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-template<class T>
+template <class T>
 class node
 {
 public:
@@ -13,15 +13,15 @@ public:
     node(T);
 };
 
-template<class T>
-node<T> ::node(T data)
+template <class T>
+node<T>::node(T data)
 {
     this->data = data;
     this->next = NULL;
     this->prev = NULL;
 }
 
-template<class T>
+template <class T>
 class DoublyLL
 {
 public:
@@ -42,15 +42,15 @@ public:
     void DeleteAtPos(int);
 };
 
-template<class T>
-DoublyLL<T> ::DoublyLL()
+template <class T>
+DoublyLL<T>::DoublyLL()
 {
     this->first = NULL;
     this->iCnt = 0;
 }
 
-template<class T>
-void DoublyLL<T> ::Display()
+template <class T>
+void DoublyLL<T>::Display()
 {
     node<T> *temp = NULL;
 
@@ -65,14 +65,14 @@ void DoublyLL<T> ::Display()
     cout << "NULL\n";
 }
 
-template<class T>
-int DoublyLL<T> ::Count()
+template <class T>
+int DoublyLL<T>::Count()
 {
     return this->iCnt;
 }
 
-template<class T>
-void DoublyLL<T> ::InsertFirst(T iNo)
+template <class T>
+void DoublyLL<T>::InsertFirst(T iNo)
 {
     node<T> *newn = NULL;
     newn = new node<T>(iNo);
@@ -90,8 +90,8 @@ void DoublyLL<T> ::InsertFirst(T iNo)
     this->iCnt++;
 }
 
-template<class T>
-void DoublyLL<T> ::InsertLast(T iNo)
+template <class T>
+void DoublyLL<T>::InsertLast(T iNo)
 {
     node<T> *newn = NULL;
     node<T> *temp = NULL;
@@ -119,8 +119,8 @@ void DoublyLL<T> ::InsertLast(T iNo)
     this->iCnt++;
 }
 
-template<class T>
-void DoublyLL<T> ::InsertAtPos(T iNo, int iPos)
+template <class T>
+void DoublyLL<T>::InsertAtPos(T iNo, int iPos)
 {
     node<T> *newn = NULL;
     node<T> *temp = NULL;
@@ -156,8 +156,8 @@ void DoublyLL<T> ::InsertAtPos(T iNo, int iPos)
     }
 }
 
-template<class T>
-void DoublyLL<T> ::DeleteFirst()
+template <class T>
+void DoublyLL<T>::DeleteFirst()
 {
     if (this->first == NULL)
     {
@@ -178,8 +178,8 @@ void DoublyLL<T> ::DeleteFirst()
     this->iCnt--;
 }
 
-template<class T>
-void DoublyLL<T> ::DeleteLast()
+template <class T>
+void DoublyLL<T>::DeleteLast()
 {
     node<T> *temp = NULL;
 
@@ -207,8 +207,8 @@ void DoublyLL<T> ::DeleteLast()
     this->iCnt--;
 }
 
-template<class T>
-void DoublyLL<T> ::DeleteAtPos(int iPos)
+template <class T>
+void DoublyLL<T>::DeleteAtPos(int iPos)
 {
     node<T> *temp = NULL;
     if (iPos < 1 || iPos > this->iCnt)
