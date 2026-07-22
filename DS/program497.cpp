@@ -1,57 +1,147 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+template<class T>
 class node
 {
-    public :
-        int data;
-        node *next;
+public:
+    int data;
+    node<T> *next;
 
-        node(int data)
-        {
-            this->data = data;
-            this->next = NULL;
-        }
-
+    node(T data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
 };
 
-
+template<class T>
 class Stack
 {
-    public : 
-        node *first;
-        int iCnt;
+public:
+    node<T> *first;
+    int iCnt;
 
-    public : 
-        Stack();
-        void Display();
-        int Count();
+public:
+    Stack();
+    void Display();
+    int Count();
 
-        void Push(int);
-        void Pop();
-        int Pip();
-
+    void Push(T);
+    void Pop();
+    int Peek();
 };
 
-Stack :: Stack()
+template<class T>
+Stack<T> ::Stack()
 {
     this->first = NULL;
     this->iCnt = 0;
 }
 
-void Stack :: Display()
+template<class T>
+void Stack<T> ::Display()
 {
-    node *temp = NULL;
+    node<T> *temp = NULL;
     temp = this->first;
 
-    while(temp!= NULL)
+    while (temp != NULL)
     {
-        cout<<"| "<<temp->data<<" |\n";
+        cout << "| " << temp->data << " |\n";
         temp = temp->next;
     }
-    cout<<"|______|\n";
+    cout << "|____|\n";
 }
+
+template<class T>
+void Stack<T> ::Push(T iNo) // InertFirst
+{
+    node<T> *newn = new node<T>(iNo);
+
+    if (this->first == NULL)
+    {
+        this->first = newn;
+    }
+    else
+    {
+        newn->next = this->first;
+        this->first = newn;
+    }
+
+    this->iCnt++;
+}
+
+template<class T>
+void Stack<T> ::Pop() // DeleteFirst
+{
+    node<T> *target = NULL;
+
+    if (this->first == NULL)
+    {
+        return;
+    }
+    else if (this->first->next == NULL)
+    {
+        delete this->first;
+        this->first = NULL;
+    }
+    else
+    {
+        target = this->first;
+        this->first = this->first->next;
+        delete target;
+    }
+
+    this->iCnt--;
+}
+
+template<class T>
+int Stack<T> ::Peek()
+{
+    if (this->first == NULL)
+    {
+        cout << "Stack is Empty\n";
+        return -1;
+    }
+
+    return this->first->data;
+}
+
+template<class T>
+int Stack<T> :: Count()
+{
+    return this->iCnt;
+}
+
 int main()
 {
+    Stack<int> sobj;
+    int iRet = 0;
+
+    
+
+    sobj.Push(11);
+    sobj.Push(21);
+    sobj.Push(51);
+    sobj.Push(101);
+
+    sobj.Display();
+    iRet = sobj.Count();
+    cout<<"Elements of stack are : "<<iRet<<endl;
+
+    sobj.Pop();
+    cout<<"Popped Element is : "<<iRet<<endl;
+
+    iRet = sobj.Count();
+    sobj.Display();
+    cout<<"Elements of stack are : "<<iRet<<endl;
+
+    iRet = sobj.Peek();
+    sobj.Pop();
+    cout<<"Pipped elemet is : "<<iRet<<endl;
+    sobj.Display();
+    iRet = sobj.Count();
+    cout<<"Elements of stack are : \n"<<iRet<<endl;
+
     return 0;
-}   
+}
