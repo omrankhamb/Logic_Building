@@ -65,7 +65,7 @@ bool Searching ::LinearSearch(int iNo)
     }
 
     return bFlag;
-}cm
+}
 
 bool Searching ::Bidirectional(int iNo)
 {
