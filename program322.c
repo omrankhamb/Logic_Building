@@ -12,6 +12,5 @@ int main()
         printf("%d : %d\n",iCnt,iMask);
         iMask = iMask << 1;
     }
-
     return 0;
 }
