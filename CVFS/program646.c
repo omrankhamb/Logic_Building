@@ -564,6 +564,11 @@ int main()
             {
                 ManPageDisplay(Command[1]);
             }
+            // MMarevllous : > ls -a
+            if (strcmp(Command[0], "man") == 0)
+            {
+                LsFile_All();
+            }
             else
             {
                 printf("Command not found\n");
@@ -574,10 +579,10 @@ int main()
         else if (iCount == 3)
         {
             // Marvellous : > creat Ganesh.txt
-            iRet = CreateFile(Command[1], atoi(Command[2]));
+            
             if (strcmp(Command[0], "creat") == 0)
             {
-                
+                iRet = CreateFile(Command[1], atoi(Command[2]));
                 if(iRet == ERR_NO_INODES)
                 {
                     printf("Error : Unable to create new file\n");
@@ -621,4 +626,4 @@ int main()
     } // End of While
 
     return 0;
-} // End of mainb-
+} // End of main
